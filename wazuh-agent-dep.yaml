@@ -15,40 +15,16 @@ spec:
         app: wazuh-agent
     spec:
       volumes:
-      - name: syslog
+      - name: log-dir
         hostPath:
-          path: /var/log/syslog
-      - name: apache-error
-        hostPath:
-          path: /var/log/apache2/error.log
-      - name: apache-access
-        hostPath:
-          path: /var/log/apache2/access.log
-      - name: syslog-secure
-        hostPath:
-          path: /var/log/secure
-      - name: yum
-        hostPath:
-          path: /var/log/yum.log
-      - name: kernel
-        hostPath:
-          path: /var/log/kern.log
+          path: /var/log/
+
       containers:
       - image: nidp/wazuh-agent
         name: wazuh-agent
         volumeMounts: 
-        - name: syslog
-          mountPath: /var/log/syslog
-        - name: apache-error
-          mountPath: /var/log/apache2/error.log
-        - name: apache-access
-          mountPath: /var/log/apache2/access.log
-        - name: syslog-secure
-          mountPath: /var/log/secure
-        - name: yum
-          mountPath: /var/log/yum.log
-        - name: kernel
-          mountPath: /var/log/kern.log
+        - name: log-dir
+          mountPath: /var/log/
         env:
         - name: JOIN_MANAGER
           value: "IP ADDR"
