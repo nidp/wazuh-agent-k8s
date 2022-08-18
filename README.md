@@ -1,7 +1,12 @@
 # wazuh-agent-k8s
 
-docker build -t nidp/wazuh-agent
+## Build Docker image, if modified
 
-docker push nidp/wazuh-agent
+$ docker build -t nidp/wazuh-agent .
 
+## push 
+$ docker push nidp/wazuh-agent
+
+
+## create k8s resources
 kubectl create -f wazuh-agent-dep.yaml
