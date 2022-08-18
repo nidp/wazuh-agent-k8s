@@ -51,15 +51,15 @@ spec:
           mountPath: /var/log/kern.log
         env:
         - name: JOIN_MANAGER
-          value: "172.18.5.42"
+          value: "IP ADDR"
         - name: JOIN_MANAGER_MASTER_HOST
-          value: "172.18.5.42"
+          value: "IP ADDR"
         - name: JOIN_MANAGER_WORKER_HOST
-          value: "172.18.5.42"
+          value: "IP ADDR"
         - name: JOIN_MANAGER_PROTOCOL
           value: "https"
         - name: NODE_NAME
-          value: "Yared"
+          value: "TEST"
         - name: WAZUH_GROUPS
           value: NID
         - name: JOIN_MANAGER_API_PORT
